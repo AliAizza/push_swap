@@ -47,13 +47,10 @@ t_list	*ft_make_list(int a, char **s)
 	int	i;
 
 	i = 1;
-	head = ft_lstnew(ft_atoi(s[i]));
-	head->min = ft_atoi(s[i++]);
+	head = ft_lstnew(ft_atoi(s[i++]));
 	while (i < a)
 	{
 		ft_lstadd_back(&head, ft_lstnew(ft_atoi(s[i])));
-		if (head->min > ft_atoi(s[i]))
-			head->min = ft_atoi(s[i]);
 		i++;
 	}
 	return (head);
