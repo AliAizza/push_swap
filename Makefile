@@ -1,4 +1,4 @@
-SRC=  push_swap.c moves.c sort.c sort_check.c utils.c utils1.c
+SRC=  error_check.c find.c moves.c push_swap.c sort.c sort_100.c sort_3.c sort_5.c sort_check.c sort_utils.c utils.c
 
 NAME= push_swap.a
 

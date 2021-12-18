@@ -1,16 +1,22 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   utils.c                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: aaizza <aaizza@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/12/18 16:41:05 by aaizza            #+#    #+#             */
+/*   Updated: 2021/12/18 17:36:18 by aaizza           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
-#include <stdio.h>
 
-int	ft_isdigit(char c)
+long int	ft_atoi(char *s)
 {
-	return (c >= '0' && c <= '9');
-}
-
-int	ft_atoi(char *s)
-{
-	int	sign;
-	int	res;
-	int	i;
+	int			sign;
+	long int	res;
+	int			i;
 
 	sign = 1;
 	res = 0;
@@ -41,24 +47,28 @@ int	ft_strlen(char *s)
 	return (i);
 }
 
-int	ft_digit_check(char *s)
+t_list	*ft_make_list(int a, char **s)
 {
-	int	i;
+	t_list	*head;
+	int		i;
 
-	i = 0;
-	if (s[i] == '-')
-		i++;
-	while (s[i] == 48)
-		i++;
-	while (s[i])
+	i = 1;
+	head = ft_lstnew(ft_atoi(s[i++]));
+	while (i < a)
 	{
-		if (!ft_isdigit(s[i]))
-		{
-			printf("%s\n", "ERROR");
-			return (0);
-		}
+		ft_lstadd_back(&head, ft_lstnew(ft_atoi(s[i])));
 		i++;
 	}
-	return (1);
+	return (head);
 }
 
+void	ft_lstadd_front(t_list **lst, t_list *new)
+{
+	if (*lst)
+	{
+		new->next = *lst;
+		*lst = new;
+	}
+	else
+		*lst = new;
+}

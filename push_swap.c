@@ -1,7 +1,19 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   push_swap.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: aaizza <aaizza@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/12/18 16:38:54 by aaizza            #+#    #+#             */
+/*   Updated: 2021/12/18 18:50:17 by aaizza           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <stdio.h>
 #include "push_swap.h"
 
-int main(int argc, char **argv)
+int	main(int argc, char **argv)
 {
 	t_list	*a;
 	t_list	*b;
@@ -18,12 +30,9 @@ int main(int argc, char **argv)
 			ft_sort_3(&a);
 		else if (ft_lstsize(a) <= 5)
 			ft_sort_5(&a, &b);
-		else
+		else if (ft_lstsize(a) <= 100)
 			ft_sort_100(&a, &b);
-	}
-	while (a)
-	{
-		printf("*->%d\n", a->content);
-		a = a->next;
+		else
+			ft_sort_500(&a, &b);
 	}
 }
