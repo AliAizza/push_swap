@@ -6,11 +6,10 @@
 /*   By: aaizza <aaizza@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/18 16:38:54 by aaizza            #+#    #+#             */
-/*   Updated: 2021/12/18 18:50:17 by aaizza           ###   ########.fr       */
+/*   Updated: 2021/12/19 17:07:36 by aaizza           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
 #include "push_swap.h"
 
 int	main(int argc, char **argv)

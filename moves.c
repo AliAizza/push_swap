@@ -6,12 +6,11 @@
 /*   By: aaizza <aaizza@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/18 16:35:17 by aaizza            #+#    #+#             */
-/*   Updated: 2021/12/18 17:00:27 by aaizza           ###   ########.fr       */
+/*   Updated: 2021/12/19 17:07:30 by aaizza           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include <stdio.h>
 
 void	ft_swap(t_list **head, char c)
 {
@@ -23,9 +22,9 @@ void	ft_swap(t_list **head, char c)
 	a->content = a->next->content;
 	a->next->content = t->content;
 	if (c == 'a')
-		printf ("%s\n", "sa");
+		ft_putstr("sa\n");
 	else if (c == 'b')
-		printf ("%s\n", "sb");
+		ft_putstr("sb\n");
 }
 
 void	ft_push(t_list **i, t_list **j, char c)
@@ -37,9 +36,9 @@ void	ft_push(t_list **i, t_list **j, char c)
 	t = t->next;
 	*j = t;
 	if (c == 'a')
-		printf("%s\n", "pa");
+		ft_putstr("pa\n");
 	else if (c == 'b')
-		printf("%s\n", "pb");
+		ft_putstr("pb\n");
 }
 
 void	ft_rotate(t_list **a, char c)
@@ -51,9 +50,9 @@ void	ft_rotate(t_list **a, char c)
 	t = t->next;
 	*a = t;
 	if (c == 'a')
-		printf("%s\n", "ra");
+		ft_putstr("ra\n");
 	else if (c == 'b')
-		printf("%s\n", "rb");
+		ft_putstr("rb\n");
 }
 
 void	ft_rev_rotate(t_list **a, char c)
@@ -70,7 +69,7 @@ void	ft_rev_rotate(t_list **a, char c)
 	t->next = NULL;
 	free(f);
 	if (c == 'a')
-		printf("%s\n", "rra");
+		ft_putstr("rra\n");
 	else if (c == 'b')
-		printf("%s\n", "rrb");
+		ft_putstr("rrb\n");
 }

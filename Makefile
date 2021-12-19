@@ -1,25 +1,26 @@
 SRC=  error_check.c find.c moves.c push_swap.c sort.c sort_100.c sort_3.c sort_5.c sort_check.c sort_utils.c utils.c
 
-NAME= push_swap.a
+CHECKER_SRC= get_next_line.c get_next_line_utils.c checker.c error_check.c find.c moves.c sort.c sort_100.c sort_3.c sort_5.c sort_check.c sort_utils.c utils.c
 
-OBJ= ${SRC:.c=.o}
+NAME= push_swap
+
+CHECKER_NAME= checker
 
 CC= gcc
 
 FLAGS= -Wall -Wextra -Werror
 
-all:		${NAME}
+all:				${NAME} ${CHECKER_NAME}
 
-${NAME}:	${SRC}
-		${CC} ${FLAGS} -c ${SRC}
-		ar -rc ${NAME} ${OBJ}
+${NAME}:			${SRC}
+					${CC} ${FLAGS} ${SRC} -o ${NAME}
+		
+${CHECKER_NAME}:	${CHECKER_SRC}
+					${CC} ${FLAGS} ${CHECKER_SRC} -o ${CHECKER_NAME}
 
-clean:
-		rm -f ${OBJ}
+fclean:
+					rm -f ${NAME} ${CHECKER_NAME}
 
-fclean:		clean
-		rm -f ${NAME}
+re:					fclean all
 
-re:		fclean all
-
-.PHONY:		all clean fclean re
+.PHONY:				all clean fclean re

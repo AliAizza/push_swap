@@ -6,12 +6,11 @@
 /*   By: aaizza <aaizza@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/18 16:40:39 by aaizza            #+#    #+#             */
-/*   Updated: 2021/12/18 17:35:04 by aaizza           ###   ########.fr       */
+/*   Updated: 2021/12/19 17:09:00 by aaizza           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include <stdio.h>
 
 int	ft_isdigit(char c)
 {
@@ -25,13 +24,18 @@ int	ft_digit_check(char *s)
 	i = 0;
 	if (s[i] == '-' || s[i] == '+')
 		i++;
+	if (!s[i])
+	{
+		ft_putstr("ERROR\n");
+		return (0);
+	}
 	while (s[i] == 48)
 		i++;
 	while (s[i])
 	{
 		if (!ft_isdigit(s[i]))
 		{
-			printf("%s\n", "ERROR");
+			ft_putstr("ERROR\n");
 			return (0);
 		}
 		i++;
@@ -52,7 +56,7 @@ int	ft_dup_check(char **s)
 		{
 			if (ft_atoi(s[i]) == ft_atoi(s[j]))
 			{
-				printf("%s\n", "ERROR");
+				ft_putstr("ERROR\n");
 				return (0);
 			}
 			j++;
@@ -73,7 +77,7 @@ int	ft_limit_check(char **s)
 		num = ft_atoi(s[i]);
 		if (num > 2147483647 || num < -2147483648)
 		{
-			printf("%s\n", "ERROR");
+			ft_putstr("ERROR\n");
 			return (0);
 		}
 		i++;

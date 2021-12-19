@@ -6,7 +6,7 @@
 /*   By: aaizza <aaizza@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/18 16:39:17 by aaizza            #+#    #+#             */
-/*   Updated: 2021/12/18 17:24:32 by aaizza           ###   ########.fr       */
+/*   Updated: 2021/12/19 16:50:27 by aaizza           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define PUSH_SWAP_H
 
 # include <stdlib.h>
+# include <unistd.h>
 
 typedef struct s_list
 {
@@ -21,6 +22,13 @@ typedef struct s_list
 	struct s_list	*next;
 }	t_list;
 
+int			ft_strlen(char *str);
+void		ft_putstr(char *s);
+int			ft_strcmp(char *s1, char *s2);
+char		*ft_strjoin(char *s1, char *s2);
+int			ft_checkline(char *s);
+char		*get_next_line(int fd);
+char		*ft_substr(char *s, int start, int len);
 void		ft_lstadd_back(t_list **lst, t_list *new);
 t_list		*ft_lstnew(int content);
 int			ft_lstsize(t_list *lst);
