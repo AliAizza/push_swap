@@ -6,7 +6,7 @@
 /*   By: aaizza <aaizza@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/18 16:28:56 by aaizza            #+#    #+#             */
-/*   Updated: 2021/12/18 17:35:10 by aaizza           ###   ########.fr       */
+/*   Updated: 2021/12/19 18:24:32 by aaizza           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ void	ft_sort_100(t_list **a, t_list **b)
 		p = ft_find_by_index(t, k);
 		i++;
 	}
+
 	ft_sort2(a, b);
 	ft_sort3(a, b);
 }

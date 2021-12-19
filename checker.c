@@ -6,7 +6,7 @@
 /*   By: aaizza <aaizza@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/19 15:02:49 by aaizza            #+#    #+#             */
-/*   Updated: 2021/12/19 17:12:56 by aaizza           ###   ########.fr       */
+/*   Updated: 2021/12/19 17:18:36 by aaizza           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,6 +58,14 @@ int	ft_checker2(t_list **a, t_list **b, char *line)
 	return (0);
 }
 
+void	ft_sortchecker(t_list *a)
+{
+	if (ft_lst_sortcheck(a))
+		ft_putstr("OK\n");
+	else
+		ft_putstr("KO\n");
+}
+
 int	main(int argc, char **argv)
 {
 	t_list	*a;
@@ -75,14 +83,13 @@ int	main(int argc, char **argv)
 		{
 			free (line);
 			ft_putstr("ERROR\n");
-			exit (0);
+			return (0);
 		}
 		free (line);
 		line = get_next_line(0);
 	}
 	free (line);
-	if (ft_lst_sortcheck(a))
-		ft_putstr("OK\n");
-	else
-		ft_putstr("KO\n");
+	ft_sortchecker(a);
+	free(a);
+	free(b);
 }
