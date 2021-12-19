@@ -6,51 +6,52 @@
 /*   By: aaizza <aaizza@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/18 16:33:34 by aaizza            #+#    #+#             */
-/*   Updated: 2021/12/19 18:29:05 by aaizza           ###   ########.fr       */
+/*   Updated: 2021/12/19 22:01:44 by aaizza           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-t_list	*ft_copy(t_list *l)
+int	*ft_sort_array(int *s)
 {
-	t_list	*copy;
+	int		i;
+	int		j;
+	int		k;
 
-	copy = ft_lstnew(l->content);
-	l = l->next;
-	while (l)
+	i = 0;
+	while (s[i])
 	{
-		ft_lstadd_back(&copy, ft_lstnew(l->content));
-		l = l->next;
+		j = i + 1;
+		while (s[j])
+		{
+			if (s[i] > s[j])
+			{
+				k = s[i];
+				s[i] = s[j];
+				s[j] = k;
+			}
+			j++;
+		}
+		i++;
 	}
-	return (copy);
+	return (s);
 }
 
-t_list	*ft_lst_sortlist(t_list *l)
+int	*ft_sorted_array(t_list *l)
 {
-	t_list	*s;
-	t_list	*r;
-	t_list	*t;
-	int		f;
+	int		*s;
+	int		i;
 
-	t = ft_copy(l);
-	r = t;
-	while (!ft_lst_sortcheck(t))
+	i = ft_lstsize(l);
+	s = malloc(i * sizeof(long int));
+	i = 0;
+	while (l)
 	{
-		s = t->next;
-		while (s)
-		{
-			if (t->content > s->content)
-			{
-				f = s->content;
-				s->content = t->content;
-				t->content = f;
-			}
-			s = s->next;
-		}
-		t = t->next;
+		s[i] = l->content;
+		i++;
+		l = l->next;
 	}
-	return (r);
+	return (ft_sort_array(s));
 }
 
 int	ft_lst_sortcheck(t_list *head)

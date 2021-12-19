@@ -1,6 +1,6 @@
-SRC=  error_check.c find.c moves.c push_swap.c sort.c sort_100.c sort_3.c sort_5.c sort_check.c sort_utils.c utils.c
+SRC=  error_check.c find.c moves.c push_swap.c sort.c sort_3.c sort_5.c sort_100.c sort_check.c sort_utils.c utils.c
 
-CHECKER_SRC= get_next_line.c get_next_line_utils.c checker.c error_check.c find.c moves.c sort.c sort_100.c sort_3.c sort_5.c sort_check.c sort_utils.c utils.c
+CHECKER_SRC= get_next_line.c get_next_line_utils.c checker.c error_check.c sort_100.c find.c moves.c sort.c sort_3.c sort_5.c sort_check.c sort_utils.c utils.c
 
 NAME= push_swap
 

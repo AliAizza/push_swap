@@ -6,7 +6,7 @@
 /*   By: aaizza <aaizza@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/18 16:38:54 by aaizza            #+#    #+#             */
-/*   Updated: 2021/12/19 18:29:30 by aaizza           ###   ########.fr       */
+/*   Updated: 2021/12/19 23:37:41 by aaizza           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,16 +35,4 @@ int	main(int argc, char **argv)
 		else
 			ft_sort_500(&a, &b);
 	}
-	// while(a)
-	// {
-	// 	printf("%d ", a->content);
-	// 	a = a->next;
-	// }
-	// printf("\n");
-	// while(b)
-	// {
-	// 	printf("%d ", b->content);
-	// 	b = b->next;
-	// }
-	system ("leaks push_swap");
 }

@@ -6,26 +6,11 @@
 /*   By: aaizza <aaizza@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/18 16:35:17 by aaizza            #+#    #+#             */
-/*   Updated: 2021/12/19 18:01:07 by aaizza           ###   ########.fr       */
+/*   Updated: 2021/12/19 21:51:58 by aaizza           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-// void	ft_swap(t_list **head, char c)
-// {
-// 	t_list	*t;
-// 	t_list	*a;
-
-// 	a = *head;
-// 	t = ft_lstnew(a->content);
-// 	a->content = a->next->content;
-// 	a->next->content = t->content;
-// 	if (c == 'a')
-// 		ft_putstr("sa\n");
-// 	else if (c == 'b')
-// 		ft_putstr("sb\n");
-// }
 
 void	ft_swap(t_list **head, char c)
 {
@@ -46,7 +31,7 @@ void	ft_push(t_list **i, t_list **j, char c)
 	t_list	*tmp;
 
 	tmp = *j;
-	*j = (*j)->next;	
+	*j = (*j)->next;
 	tmp->next = NULL;
 	ft_lstadd_front(i, tmp);
 	if (c == 'a')

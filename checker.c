@@ -6,7 +6,7 @@
 /*   By: aaizza <aaizza@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/19 15:02:49 by aaizza            #+#    #+#             */
-/*   Updated: 2021/12/19 17:18:36 by aaizza           ###   ########.fr       */
+/*   Updated: 2021/12/19 23:38:41 by aaizza           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,8 +88,5 @@ int	main(int argc, char **argv)
 		free (line);
 		line = get_next_line(0);
 	}
-	free (line);
 	ft_sortchecker(a);
-	free(a);
-	free(b);
 }
