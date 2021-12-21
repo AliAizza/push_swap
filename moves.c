@@ -6,7 +6,7 @@
 /*   By: aaizza <aaizza@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/18 16:35:17 by aaizza            #+#    #+#             */
-/*   Updated: 2021/12/19 21:51:58 by aaizza           ###   ########.fr       */
+/*   Updated: 2021/12/21 01:57:51 by aaizza           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ void	ft_swap(t_list **head, char c)
 {
 	t_list	*tmp;
 
+	if (ft_lstsize(*head) < 2)
+		return ;
 	tmp = (*head)->next;
 	(*head)->next = tmp->next;
 	tmp->next = *head;
@@ -30,6 +32,8 @@ void	ft_push(t_list **i, t_list **j, char c)
 {
 	t_list	*tmp;
 
+	if (!(*j))
+		return ;
 	tmp = *j;
 	*j = (*j)->next;
 	tmp->next = NULL;
@@ -44,6 +48,8 @@ void	ft_rotate(t_list **a, char c)
 {
 	t_list	*tmp;
 
+	if (ft_lstsize(*a) < 2)
+	return ;
 	tmp = *a;
 	*a = (*a)->next;
 	tmp->next = NULL;
@@ -59,6 +65,8 @@ void	ft_rev_rotate(t_list **a, char c)
 	t_list	*tmp;
 	t_list	*last;
 
+	if (ft_lstsize(*a) < 2)
+		return ;
 	tmp = ft_lstlast(*a);
 	last = *a;
 	while (last->next->next != NULL)

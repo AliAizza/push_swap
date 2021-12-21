@@ -6,7 +6,7 @@
 /*   By: aaizza <aaizza@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/19 15:02:49 by aaizza            #+#    #+#             */
-/*   Updated: 2021/12/19 23:38:41 by aaizza           ###   ########.fr       */
+/*   Updated: 2021/12/21 01:58:46 by aaizza           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,13 +43,13 @@ int	ft_checker2(t_list **a, t_list **b, char *line)
 		ft_swap(b, 'c');
 		return (1);
 	}
-	else if (ft_strcmp(line, "rr") == 0)
+	else if (ft_strcmp(line, "rr\n") == 0)
 	{
 		ft_rotate(a, 'c');
 		ft_rotate(b, 'c');
 		return (1);
 	}
-	else if (ft_strcmp(line, "rrr") == 0)
+	else if (ft_strcmp(line, "rrr\n") == 0)
 	{
 		ft_rev_rotate(a, 'c');
 		ft_rev_rotate(b, 'c');

@@ -6,7 +6,7 @@
 /*   By: aaizza <aaizza@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/18 16:28:29 by aaizza            #+#    #+#             */
-/*   Updated: 2021/12/19 23:32:24 by aaizza           ###   ########.fr       */
+/*   Updated: 2021/12/20 18:56:12 by aaizza           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int	ft_find_x(t_list *l, int x)
 	int		i;
 	t_list	*t;
 
-	i = 1;
+	i = 0;
 	t = l;
 	while (t->content != x)
 	{

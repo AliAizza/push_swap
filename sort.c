@@ -6,7 +6,7 @@
 /*   By: aaizza <aaizza@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/18 16:32:14 by aaizza            #+#    #+#             */
-/*   Updated: 2021/12/19 23:15:00 by aaizza           ###   ########.fr       */
+/*   Updated: 2021/12/20 19:12:37 by aaizza           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,7 +93,7 @@ void	ft_sort3(t_list **a, t_list **b)
 
 	while (*b)
 	{
-		k = ft_find_biggest(*b) - 1;
+		k = ft_find_biggest(*b);
 		ft_nor2(a, b, k);
 	}
 }

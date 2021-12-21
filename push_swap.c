@@ -6,12 +6,11 @@
 /*   By: aaizza <aaizza@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/18 16:38:54 by aaizza            #+#    #+#             */
-/*   Updated: 2021/12/19 23:37:41 by aaizza           ###   ########.fr       */
+/*   Updated: 2021/12/20 23:13:09 by aaizza           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include <stdio.h>
 
 int	main(int argc, char **argv)
 {
@@ -19,12 +18,12 @@ int	main(int argc, char **argv)
 	t_list	*b;
 
 	b = NULL;
-	if (!ft_error_check(argv) || argc < 2)
+	if (!ft_error_check(argv) || argc < 3)
 		return (0);
 	a = ft_make_list(argc, argv);
 	if (!ft_lst_sortcheck(a))
 	{
-		if (ft_lstsize(a) <= 2)
+		if (ft_lstsize(a) == 2)
 			ft_sort_2(&a);
 		else if (ft_lstsize(a) == 3)
 			ft_sort_3(&a);
