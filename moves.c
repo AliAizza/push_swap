@@ -6,7 +6,7 @@
 /*   By: aaizza <aaizza@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/18 16:35:17 by aaizza            #+#    #+#             */
-/*   Updated: 2021/12/21 01:57:51 by aaizza           ###   ########.fr       */
+/*   Updated: 2022/02/10 23:27:08 by aaizza           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ void	ft_rotate(t_list **a, char c)
 	t_list	*tmp;
 
 	if (ft_lstsize(*a) < 2)
-	return ;
+		return ;
 	tmp = *a;
 	*a = (*a)->next;
 	tmp->next = NULL;
