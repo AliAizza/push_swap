@@ -6,11 +6,34 @@
 /*   By: aaizza <aaizza@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/18 16:38:54 by aaizza            #+#    #+#             */
-/*   Updated: 2021/12/20 23:13:09 by aaizza           ###   ########.fr       */
+/*   Updated: 2022/02/18 00:53:51 by aaizza           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+void	ft_sort_100(t_list **a, t_list **b)
+{
+	int		size;
+	int		count;
+	int		k;
+	t_norm	g;
+
+	ft_index(a);
+	size = ft_lstsize(*a);
+	while (size > 5)
+	{
+		count = ft_chunk(a);
+		g.min = ft_find_min(*a);
+		g.max = (count + g.min) - 1;
+		ft_make(a, b, count, g);
+		size = ft_lstsize(*a);
+	}
+	ft_sort_5(a, b);
+	ft_convert_last(a);
+	k = (*a)->index - 1;
+	ft_push_back_to_a(a, b, k);
+}
 
 int	main(int argc, char **argv)
 {
@@ -29,9 +52,9 @@ int	main(int argc, char **argv)
 			ft_sort_3(&a);
 		else if (ft_lstsize(a) <= 5)
 			ft_sort_5(&a, &b);
-		else if (ft_lstsize(a) <= 100)
-			ft_sort_100(&a, &b);
 		else
-			ft_sort_500(&a, &b);
+			ft_sort_100(&a, &b);
 	}
+	while (!ft_lst_sortcheck(a))
+		ft_rev_rotate(&a, 'a');
 }

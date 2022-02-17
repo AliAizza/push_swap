@@ -6,53 +6,11 @@
 /*   By: aaizza <aaizza@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/18 16:33:34 by aaizza            #+#    #+#             */
-/*   Updated: 2021/12/19 22:01:44 by aaizza           ###   ########.fr       */
+/*   Updated: 2022/02/18 00:50:54 by aaizza           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-int	*ft_sort_array(int *s)
-{
-	int		i;
-	int		j;
-	int		k;
-
-	i = 0;
-	while (s[i])
-	{
-		j = i + 1;
-		while (s[j])
-		{
-			if (s[i] > s[j])
-			{
-				k = s[i];
-				s[i] = s[j];
-				s[j] = k;
-			}
-			j++;
-		}
-		i++;
-	}
-	return (s);
-}
-
-int	*ft_sorted_array(t_list *l)
-{
-	int		*s;
-	int		i;
-
-	i = ft_lstsize(l);
-	s = malloc(i * sizeof(long int));
-	i = 0;
-	while (l)
-	{
-		s[i] = l->content;
-		i++;
-		l = l->next;
-	}
-	return (ft_sort_array(s));
-}
 
 int	ft_lst_sortcheck(t_list *head)
 {
@@ -80,6 +38,23 @@ int	ft_there_is_smaller(t_list *l, int x)
 		if (l->content <= x)
 			return (1);
 		l = l->next;
+	}
+	return (0);
+}
+
+int	ft_find_position(t_list **a, int min, int max)
+{
+	int		i;
+	t_list	*tmp;
+
+	tmp = *a;
+	i = 0;
+	while (tmp)
+	{
+		if (tmp->index >= min && tmp->index <= max)
+			return (i);
+		tmp = tmp->next;
+		i++;
 	}
 	return (0);
 }

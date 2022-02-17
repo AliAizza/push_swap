@@ -6,7 +6,7 @@
 /*   By: aaizza <aaizza@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/18 16:39:17 by aaizza            #+#    #+#             */
-/*   Updated: 2021/12/19 21:42:58 by aaizza           ###   ########.fr       */
+/*   Updated: 2022/02/18 00:36:22 by aaizza           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,25 @@
 typedef struct s_list
 {
 	int				content;
+	int				index;
 	struct s_list	*next;
 }	t_list;
 
-int			*ft_sort_array(int *s);
+typedef struct norm
+{
+	int	min;
+	int	max;
+	int	med;
+}	t_norm;
+
+void		ft_index(t_list **a);
+int			ft_find_position(t_list **a, int min, int max);
+void		ft_push_to_b(t_list **a, t_list **b, t_norm g, int p);
+void		ft_push_back_to_a(t_list **a, t_list **b, int k);
+void		ft_convert_last(t_list **a);
+void		ft_make(t_list **a, t_list **b, int count, t_norm g);
+int			ft_chunk(t_list **a);
+int			*ft_sort_array(int *s, int size);
 int			*ft_sorted_array(t_list *l);
 int			ft_strlen(char *str);
 void		ft_putstr(char *s);

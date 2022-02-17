@@ -6,7 +6,7 @@
 /*   By: aaizza <aaizza@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/18 16:40:06 by aaizza            #+#    #+#             */
-/*   Updated: 2021/12/18 16:40:29 by aaizza           ###   ########.fr       */
+/*   Updated: 2022/02/16 21:23:24 by aaizza           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,17 +44,6 @@ t_list	*ft_lstnew(int content)
 	new->content = content;
 	new->next = 0;
 	return (new);
-}
-
-t_list	*ft_lstlast(t_list *lst)
-{
-	while (lst)
-	{
-		if (!lst->next)
-			return (lst);
-		lst = lst->next;
-	}
-	return (lst);
 }
 
 int	ft_lst_rev_sortcheck(t_list *head)
