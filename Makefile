@@ -10,22 +10,20 @@ CC= gcc
 
 FLAGS= -Wall -Wextra -Werror
 
-all:				${NAME}
+all:		${NAME}
 
-checker:			${CHECKER_NAME}
+checker:	${CHECKER_SRC}
+			@${CC} ${FLAGS} ${CHECKER_SRC} -o ${CHECKER_NAME}
 
-${NAME}:			${SRC}
-					${CC} ${FLAGS} ${SRC} -o ${NAME}
-		
-${CHECKER_NAME}:	${CHECKER_SRC}
-					${CC} ${FLAGS} ${CHECKER_SRC} -o ${CHECKER_NAME}
+${NAME}:	${SRC}
+			@${CC} ${FLAGS} ${SRC} -o ${NAME}
 
 clean:
-					rm -f ${NAME}
+			rm -f ${NAME}
 
 fclean:
-					rm -f ${NAME} ${CHECKER_NAME}
+			rm -f ${NAME} ${CHECKER_NAME}
 
-re:					fclean all
+re:			fclean all
 
-.PHONY:				all clean fclean re
+.PHONY:		all clean fclean re
